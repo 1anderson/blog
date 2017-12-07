@@ -6,7 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
-import { MenuComponent } from './menu/menu.component';
+import { NavMenuComponent } from './nav-menu/nav-menu.component';
 
 
 @NgModule({
@@ -14,7 +14,7 @@ import { MenuComponent } from './menu/menu.component';
     AppComponent,
     HomeComponent,
     HeaderComponent,
-    MenuComponent
+    NavMenuComponent
   ],
   imports: [
     BrowserModule,
