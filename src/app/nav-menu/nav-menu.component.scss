@@ -1,3 +1,5 @@
+
+$games-color-main: #428bca;
 .menu{
     width: 100%;
     height: 100%;
@@ -7,7 +9,7 @@
     color: #cdddeb;
     text-decoration:none;
     font-size: 1.5em;
-    margin-left: 10%;
+    //margin-left: 10%;
     padding: 10px 0 10px 0; 
 }
 
@@ -16,6 +18,59 @@
 }
 
 
-a:hover{
+button:hover{
     color: #FFFFFF;
+}
+
+
+
+.dropdown {
+    overflow: hidden;
+}
+
+.dropdown .dropbtn {
+    font-size: 16px;    
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    font-size: 12px;
+}
+
+.dropdown-content a:hover {
+    background-color: #87CEEB;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.arrow {
+    width: 0;
+    height: 0;
+    margin-left: 10px;
+    border-right: 9px solid transparent;
+    border-left: 9px solid transparent;
+    border-bottom: 9px solid #FEFEFE;
+    position: absolute;
+    top: -9px;
 }

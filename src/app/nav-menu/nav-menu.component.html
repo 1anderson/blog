@@ -1,3 +1,10 @@
 <nav class="menu" fxLayout="row" fxLayoutAlign="center" >
-  <a class="menu__item" *ngFor="let navItem of navItens" [href]="navItem.link">{{navItem.name}}</a> 
+    <div class="dropdown" *ngFor="let navItem of navItens">
+        <button class="dropbtn">{{navItem.name}} 
+        </button>
+        <div class="dropdown-content">
+          <div class="arrow"></div>
+            <a *ngFor="let navSubItem of navItem.subcategory" class="menu__item" [href]="navSubItem.link">{{navSubItem.name}}</a>
+        </div>
+      </div> 
 </nav>
