@@ -1,0 +1,7 @@
+:host{
+    height: 100vh;
+    display: flex; /* or inline-flex */
+    flex-direction: column;
+    justify-content: space-between;
+    // fxLayout="column" fxLayoutAlign="space-between center"
+}
