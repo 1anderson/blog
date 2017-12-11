@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 
 export class HeaderComponent implements OnInit {
 
-  private navItens = [{name: 'desenvolvimento', link: '/games'}, {name: 'games', link: '/games'}];
+  private navItens = [{name: 'Desenvolvimento', link: '/games'}, {name: 'Games', link: '/games'},{name: 'Psicologia', link: '/psicologia'}];
   constructor() { }
 
   ngOnInit() {
