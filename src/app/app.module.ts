@@ -4,12 +4,15 @@ import { MatToolbarModule, MatMenuModule, MatButtonModule } from '@angular/mater
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from "@angular/flex-layout";
 
+
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { ListItemComponent } from './home/list-item/list-item.component';
 import { FooterComponent } from './footer/footer.component';
+
+import { SharedModule } from './shared/shared.module'
 
 
 @NgModule({
@@ -27,7 +30,8 @@ import { FooterComponent } from './footer/footer.component';
     MatMenuModule,
     MatButtonModule,
     BrowserAnimationsModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,6 +1,7 @@
-<article class="item">
-    <section fxLayout="column"  fxLayoutAlign="space-between center">
-        <h2>Title</h2>
-         <p>Description</p>
+<article class="item" *ngFor="let item of itens">
+    <section fxLayout="column" fxLayoutAlign="space-between start">
+        <h2>{{item.title}}</h2>
+        <p class="item__date">{{item.date}} <a class="item__author--color-light-blue" href="/autor">{{item.author}}</a></p>
+        <p>{{item.description}}</p>
     </section>
 </article>
