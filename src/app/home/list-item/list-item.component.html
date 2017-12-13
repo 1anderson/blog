@@ -1,7 +1,10 @@
-<article class="item" *ngFor="let item of itens">
+<article class="item z-depth-3">
     <section fxLayout="column" fxLayoutAlign="space-between start">
         <h2>{{item.title}}</h2>
         <p class="item__date">{{item.date}} <a class="item__author--color-light-blue" href="/autor">{{item.author}}</a></p>
-        <p>{{item.description}}</p>
+        <p class="item__description">{{item.description}}</p>
+        <div class="item__button" fxLayout="row" fxLayoutAlign="end center">
+            <button class="button--color" mat-mini-fab color="primary"><img src="../../../assets/icons/material-icons/visibility.svg"></button>
+        </div>
     </section>
 </article>

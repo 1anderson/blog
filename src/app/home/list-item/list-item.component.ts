@@ -8,7 +8,7 @@ import { Item } from './item';
 })
 export class ListItemComponent implements OnInit {
 
-  @Input() itens: Item;
+  @Input() item: Item;
   
   
   constructor() { }
