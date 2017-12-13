@@ -20,3 +20,18 @@
     
 }
 
+.social-media {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 148px;
+    height: auto;
+  }
+
+  .social-media--spacing{
+    padding: 10px 10px 0 0;
+  }
+
+  .social-media--container{
+    padding: 10%
+  }
