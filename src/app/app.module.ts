@@ -12,7 +12,8 @@ import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { ListItemComponent } from './home/list-item/list-item.component';
 import { FooterComponent } from './footer/footer.component';
 
-import { SharedModule } from './shared/shared.module'
+import { SharedModule } from './shared/shared.module';
+import { AppRoutingModule } from './/app-routing.module'
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { SharedModule } from './shared/shared.module'
     MatButtonModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
-    SharedModule
+    SharedModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
