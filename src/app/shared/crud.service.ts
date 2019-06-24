@@ -5,15 +5,27 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
 
-import { Post } from '../shared/post';
+import { Post } from './entities/post';
+import { ConfigService } from './config/config.service';
 @Injectable()
 export class CrudService {
-
-  constructor(private http: HttpClient) {}
+  private ulrBase;
+  constructor(private http: HttpClient, private configService: ConfigService) {
+    this.ulrBase = this.configService.getUrlBase();
+  }
   
-  get(url, opts?){
-    return this.http.get("assets/mock.json").map((res: Response) => res)
+  get( entity, url, opts? ) {
+    return this.http.get(`${this.ulrBase}/${entity}`).map((res: Response) => res)
       .catch((error: any) => Observable.throw(error || 'Server error'));
-  };  
+  };
+  
+  post(data, opts?) {
+      const options = {} as any;
+      console.log("DATA",data);
+      return this.http.post("http://localhost:3000/post",data,options).subscribe(
+        (res) => console.log(res),
+        (err) => console.log(err)
+      );;
+  }
   }
 

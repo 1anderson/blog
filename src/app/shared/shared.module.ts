@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CrudService } from './crud.service'
 import { HttpClientModule } from '@angular/common/http';
+import { ConfigService } from './config/config.service';
 
 @NgModule({
   imports: [
@@ -10,7 +11,8 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   declarations: [],
   providers:[
-    CrudService
+    CrudService,
+    ConfigService
   ],
   exports: []
 })

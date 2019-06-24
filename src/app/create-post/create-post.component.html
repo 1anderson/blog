@@ -1,0 +1,46 @@
+<div class="post-create-container">
+<form [formGroup]="createPostForm" (ngSubmit)="onSubmit()" class="post-create-container__form">
+    <div style="display: flex;
+    flex-direction: column;
+    margin: 30px 0 30px 0;"> 
+        <label for="Título" class="post-create-container__labels--distance">Título</label>
+        <input  type="text" formControlName="title" placeholder="Título" class="post-create-container__input--distance">
+        <label for="descrição" class="post-create-container__labels--distance">Descrição</label>
+        <textarea  type="text" formControlName="description" placeholder="descrição" class="post-create-container__input--distance"></textarea>
+        <div style="
+        display: flex;
+        flex-direction: row;
+        justify-content:space-between;">
+                <div style="display: flex;
+                flex-direction: column;width: 33%;">
+                     <label class="post-create-container__labels--distance">Categoria</label>
+                     <select name="select" class="post-create-container__input--distance" formControlName="category_id">
+                        <option [ngValue]="category.id" *ngFor="let category of categories">{{category.category_name}}</option>
+                    </select>
+                </div>
+                <div style="display: flex;
+                flex-direction: column;width: 33%;">
+                        <label class="post-create-container__labels--distance">Subcategoria</label>
+                        <select name="select" class="post-create-container__input--distance" formControlName="subcategory_id">
+                            <option [ngValue]="subCategory.id" *ngFor="let subCategory of subCategories">{{subCategory.sub_category_name}}</option>
+                        </select>
+                   </div>
+                   <div style="display: flex;
+                   flex-direction: column;width: 33%;margin-right: 0;">
+                        <label class="post-create-container__labels--distance">Autor</label>
+                        <select name="select" class="post-create-container__input--distance" formControlName="author_id">
+                            <option [ngValue]="author.id" *ngFor="let author of authors">{{author.name}}</option>
+                        </select>
+                   </div>
+             </div>
+    </div>
+    <div>
+        <label class="post-create-container__labels--distance">Conteúdo</label>
+        <editor formControlName="html" apiKey="8d7pge1r07j2aybnfkhpl31dfsak4vit55vre1517hdtiu2m" [init]="{plugins: 'image paste',paste_data_images:'true', height : '480px'}" class="post-create-container__input--distance"></editor>
+        <div class="post-create-container__container-buttons">
+            <button type="submit" class="post-create-container__send">Salvar</button>
+        </div>
+    </div>    
+    </form>
+</div>
+

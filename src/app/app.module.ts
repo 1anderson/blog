@@ -1,9 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { MatToolbarModule, MatMenuModule, MatButtonModule } from '@angular/material';
+import { MatInputModule } from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from "@angular/flex-layout";
-
+import { ReactiveFormsModule } from '@angular/forms';
+import { EditorModule } from '@tinymce/tinymce-angular';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -13,7 +15,8 @@ import { ListItemComponent } from './home/list-item/list-item.component';
 import { FooterComponent } from './footer/footer.component';
 
 import { SharedModule } from './shared/shared.module';
-import { AppRoutingModule } from './/app-routing.module'
+import { AppRoutingModule } from './/app-routing.module';
+import { CreatePostComponent } from './create-post/create-post.component'
 
 
 @NgModule({
@@ -23,17 +26,21 @@ import { AppRoutingModule } from './/app-routing.module'
     HeaderComponent,
     NavMenuComponent,
     ListItemComponent,
-    FooterComponent
+    FooterComponent,
+    CreatePostComponent
   ],
   imports: [
     BrowserModule,
     MatToolbarModule,
     MatMenuModule,
     MatButtonModule,
+    MatInputModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
     SharedModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    EditorModule
   ],
   providers: [],
   bootstrap: [AppComponent]
