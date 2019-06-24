@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
-import { Validators } from '@angular/forms';
+import { FormBuilder , Validators} from '@angular/forms';
 import { CrudService } from '../shared/crud.service';
 import { Author } from '../shared/entities/author';
 import { ConfigService } from '../shared/config/config.service';
@@ -25,17 +24,19 @@ export class CreatePostComponent implements OnInit {
 
   ngOnInit() {
     this.createPostForm = this.fb.group({
-      title: [''],
-      description: [''],
-      html: [''],
-      category_id: [''],
-      subcategory_id: [''],
-      author_id: ['']
+      title: ['', [Validators.required, Validators.maxLength(150)]],
+      description: ['', [Validators.required, Validators.maxLength(500)]],
+      html: ['', Validators.required],
+      category_id: ['' , Validators.required],
+      subcategory_id: ['', Validators.required],
+      author_id: ['', Validators.required]
     })
 
     this.getAuthors();
     this.getCategories();
     this.getSubCategories();
+
+    console.log(this.createPostForm);
   }
 
   onSubmit() {
@@ -47,7 +48,9 @@ export class CreatePostComponent implements OnInit {
     this.formData.append("sub_category_id",this.createPostForm.get('subcategory_id').value);
     this.formData.append("files",this.createPostForm.get("html").value);
     this.formData.append("author_id",this.createPostForm.get("author_id").value); 
-    this.crudService.post(this.formData);  
+    console.log( this.createPostForm);
+    
+    //this.crudService.post(this.formData);  
   }
   
   postMethod(files: FileList) {
