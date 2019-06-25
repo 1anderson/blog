@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { FormBuilder , Validators} from '@angular/forms';
 import { CrudService } from '../shared/crud.service';
 import { Author } from '../shared/entities/author';
@@ -11,7 +10,6 @@ import { ConfigService } from '../shared/config/config.service';
   styleUrls: ['./create-post.component.scss']
 })
 export class CreatePostComponent implements OnInit {
-  public Editor = ClassicEditor;
   public createPostForm;
   public fileToUpload: any;
   public formData = new FormData(); 

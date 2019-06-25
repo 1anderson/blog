@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { InjectionToken } from '@angular/core';
+
 
 @Injectable()
 export class ConfigService {
