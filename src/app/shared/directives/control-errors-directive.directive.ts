@@ -2,8 +2,6 @@ import { Directive, Self, InjectionToken } from '@angular/core';
 import { NgControl } from '@angular/forms';
 import { untilDestroyed } from 'ngx-take-until-destroy';
 
-
-
 @Directive({
   selector: '[formControl], [formControlName]'
 })
