@@ -1,7 +1,7 @@
 <div class="post-create-container">
 <form [formGroup]="createPostForm" (ngSubmit)="onSubmit()" class="post-create-container__form">
-    <i class="material-icons">add_circle</i>
-<div class="post-create-container__container-informations">
+    <i class="material-icons" style="margin-left: 4px;" (click)="changeExibition()">add_circle_outline</i>
+<div class="post-create-container__container-informations" *ngIf="isExibition">
         <label for="Título" class="post-create-container__labels--distance label-style field-required">Título</label>
         <input  type="text" formControlName="title" placeholder="Título" class="post-create-container__input--distance" required maxlength="151">
         <div invalidmessage="title" class="container-message-errors">

@@ -16,6 +16,7 @@ export class CreatePostComponent implements OnInit {
   public categories: any;
   public subCategories: any;
   public authors: Author;
+  public isExibition: boolean = true;
   constructor(private fb: FormBuilder, private crudService: CrudService, private configService: ConfigService) {
 
   }
@@ -79,6 +80,10 @@ export class CreatePostComponent implements OnInit {
       .subscribe(data => { this.subCategories = data['subCategories']; console.log(this.subCategories) },
         err => console.log(err)
       )
+  }
+
+  changeExibition() {
+    this.isExibition = !this.isExibition;
   }
 
 }
