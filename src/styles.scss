@@ -1,7 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import 'theme.scss';
 
-
 body {
     margin: 0;
 }
@@ -11,8 +10,96 @@ body {
     height: 100%;
 }
 
-
-
 .z-depth-3 {
     box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0), 0 0px 0px 0 rgba(0, 0, 0, 0), 0 0px 1px 0px rgba(0, 0, 0, 0.230);
-  }
+}
+
+// input.ng-invalid.ng-dirty:not(:focus), textarea.ng-invalid.ng-dirty:not(:focus) {
+//   box-shadow: 0 0 1px $input-invalid-color;
+//   border: 1px solid $input-invalid-color;
+// }
+
+// input.ng-invalid.ng-dirty:not(:focus), textarea.ng-invalid.ng-dirty:not(:focus), select.ng-invalid.ng-touched:not(:focus) {
+//     box-shadow: 0 0 1px $input-invalid-color;
+//     border: 1px solid $input-invalid-color;
+// }
+
+.text-message-error {
+    color: red;
+    font-size: 14px;
+}
+
+option:disabled {
+    color: gray;
+}
+
+select {
+   color: gray;
+   text-transform: uppercase;
+ }
+
+// select.ng-invalid.ng-touched {
+//     color:red
+// }
+
+textarea {
+     height: 60px;
+}
+
+textarea::placeholder {
+    line-height: 45px;
+}
+
+// textarea.ng-invalid.ng-touched.ng-dirty:not(:focus)::placeholder {
+//     color: red;
+// }
+
+input::placeholder, textarea::placeholder {
+    font-family: Roboto-Thin;
+    text-transform: uppercase;
+}
+
+.label-style {
+    font-family: Roboto-Light;
+    font-size: 1em;
+}
+
+option {
+    font-family: Roboto-Thin;
+    text-transform: uppercase;
+}
+
+
+input , textarea {
+    background: rgba(255,255,255,.1);
+	border: none;
+	border-radius: 4px;
+	font-size: 15px;
+	margin: 0;
+	outline: 0;
+	padding: 10px;
+	width: 100%;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	background-color: #e8eeef;
+	color:#8a97a0;
+	-webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+	box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+    margin-bottom: 30px;
+}
+
+input:focus , textarea:focus, select:focus {
+    background: #d2d9dd;
+}
+
+select {
+	-webkit-appearance: menulist-button;
+	height:35px;
+}
+
+.field-required::after {
+    content: "*";
+    color: black;
+}
+

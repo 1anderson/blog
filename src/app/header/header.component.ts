@@ -11,7 +11,7 @@ export class HeaderComponent implements OnInit {
 
   private navItens = [ { name: 'Desenvolvimento',subcategory: [ { name: 'Subcategory-1', link: '/games' }, { name: 'Subcategory-2', link: '/games' } ] },
                        { name: 'Games', subcategory: [ { name: 'Subcategory-1', link: '/games' }, { name: 'Subcategory-2', link: '/games' } ] },
-                       { name: 'Psicologia', subcategory: [ { name: 'Subcategory-1', link: '/games'}, {name: 'Subcategory-2', link: '/games' } ] }
+                      //  { name: 'Psicologia', subcategory: [ { name: 'Subcategory-1', link: '/games'}, {name: 'Subcategory-2', link: '/games' } ] }
                      ];
   constructor() { }
 

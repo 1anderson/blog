@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { FormBuilder , Validators} from '@angular/forms';
 import { CrudService } from '../shared/crud.service';
 import { Author } from '../shared/entities/author';
@@ -11,13 +10,13 @@ import { ConfigService } from '../shared/config/config.service';
   styleUrls: ['./create-post.component.scss']
 })
 export class CreatePostComponent implements OnInit {
-  public Editor = ClassicEditor;
   public createPostForm;
   public fileToUpload: any;
   public formData = new FormData(); 
   public categories: any;
   public subCategories: any;
   public authors: Author;
+  public isExibition: boolean = true;
   constructor(private fb: FormBuilder, private crudService: CrudService, private configService: ConfigService) {
 
   }
@@ -40,17 +39,19 @@ export class CreatePostComponent implements OnInit {
   }
 
   onSubmit() {
-    this.createPostForm.patchValue({html:new Blob([this.createPostForm.value.html])});
-    this.formData.append("title",this.createPostForm.get("title").value);
-    this.formData.append("description",this.createPostForm.get("description").value);
-    this.formData.append("user_profile_id",'1');
-    this.formData.append("category_id",this.createPostForm.get('category_id').value);
-    this.formData.append("sub_category_id",this.createPostForm.get('subcategory_id').value);
-    this.formData.append("files",this.createPostForm.get("html").value);
-    this.formData.append("author_id",this.createPostForm.get("author_id").value); 
-    console.log( this.createPostForm);
     
-    //this.crudService.post(this.formData);  
+    
+    if (this.createPostForm.valid) {
+        this.formData.append("title",this.createPostForm.get("title").value);
+        this.formData.append("description",this.createPostForm.get("description").value);
+        this.formData.append("user_profile_id",'1');
+        this.formData.append("category_id",this.createPostForm.get('category_id').value);
+        this.formData.append("sub_category_id",this.createPostForm.get('subcategory_id').value);
+        this.createPostForm.patchValue({html:new Blob([this.createPostForm.value.html])});
+        this.formData.append("files",this.createPostForm.get("html").value);
+        this.formData.append("author_id",this.createPostForm.get("author_id").value);
+        this.crudService.post(this.formData).subscribe(data => console.log(data),err => console.log(err));
+    }
   }
   
   postMethod(files: FileList) {
@@ -79,6 +80,10 @@ export class CreatePostComponent implements OnInit {
       .subscribe(data => { this.subCategories = data['subCategories']; console.log(this.subCategories) },
         err => console.log(err)
       )
+  }
+
+  changeExibition() {
+    this.isExibition = !this.isExibition;
   }
 
 }
