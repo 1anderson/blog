@@ -45,4 +45,37 @@
     height:400px;
 }
 
+.post-create-container__container-informations {
+    display: flex;
+    flex-direction: column;
+    margin: 30px 0 30px 0;
+}
+
+.container-message-errors {
+    margin:10px;
+}
+
+.container-message-errors__type-message {
+   margin:0;
+}
+
+.container-informations__qualifications {
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+}
+.container-informations__qualifications__blocks {
+    display: flex;
+    flex-direction: column;
+    width: 33%;
+}
+
+.no-margin-right {
+    margin-right: 0;
+}
+
+.font {
+    font-family: Roboto-Thin;
+}
+
 

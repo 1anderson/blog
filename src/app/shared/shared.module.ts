@@ -3,18 +3,19 @@ import { CommonModule } from '@angular/common';
 import { CrudService } from './crud.service'
 import { HttpClientModule } from '@angular/common/http';
 import { ConfigService } from './config/config.service';
-import { ControlErrorsDirectiveDirective } from './directives/control-errors-directive.directive';
+import { InvalidMessageDirective } from './directives/invalid-message.directive';
+import { InvalidTypeDirective } from './directives/invalid-type.directive';
 
 @NgModule({
   imports: [
     CommonModule,
     HttpClientModule
   ],
-  declarations: [ControlErrorsDirectiveDirective],
+  declarations: [InvalidMessageDirective, InvalidTypeDirective],
   providers:[
     CrudService,
     ConfigService
   ],
-  exports: []
+  exports: [InvalidMessageDirective, InvalidTypeDirective]
 })
 export class SharedModule { }

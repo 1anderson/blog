@@ -1,44 +1,60 @@
 <div class="post-create-container">
 <form [formGroup]="createPostForm" (ngSubmit)="onSubmit()" class="post-create-container__form">
-    <div style="display: flex;
-    flex-direction: column;
-    margin: 30px 0 30px 0;"> 
-        <label for="Título" class="post-create-container__labels--distance">Título</label>
-        <input  type="text" formControlName="title" placeholder="Título" class="post-create-container__input--distance" required  maxlength="150">
-        <label for="descrição" class="post-create-container__labels--distance">Descrição</label>
-        <textarea  type="text" formControlName="description" placeholder="descrição" class="post-create-container__input--distance" required  maxlength="500"></textarea>
-        <div style="
-        display: flex;
-        flex-direction: row;
-        justify-content:space-between;">
-                <div style="display: flex;
-                flex-direction: column;width: 33%;">
-                     <label class="post-create-container__labels--distance">Categoria</label>
-                     <select name="select" class="post-create-container__input--distance" formControlName="category_id" required>
-                        <option [ngValue]="category.id" *ngFor="let category of categories">{{category.name}}</option>
+    <i class="material-icons">add_circle</i>
+<div class="post-create-container__container-informations">
+        <label for="Título" class="post-create-container__labels--distance label-style field-required">Título</label>
+        <input  type="text" formControlName="title" placeholder="Título" class="post-create-container__input--distance" required maxlength="151">
+        <div invalidmessage="title" class="container-message-errors">
+            <p *invalidType="'required'" class="container-message-errors__type-message"></p>
+            <p *invalidType="'maxlength'" class="container-message-errors__type-message"></p>
+        </div>
+        <label for="descrição" class="post-create-container__labels--distance label-style field-required">Descrição</label>
+        <textarea  type="text" formControlName="description" placeholder="descrição" class="post-create-container__input--distance" required  maxlength="501"></textarea>
+        <div invalidmessage="description" class="container-message-errors">
+            <p *invalidType="'required'" class="container-message-errors__type-message"></p>
+            <p *invalidType="'maxlength'" class="container-message-errors__type-message"></p>
+        </div>
+        <div class="container-informations__qualifications">
+                <div class="container-informations__qualifications__blocks">
+                     <label for="categoria" class="post-create-container__labels--distance label-style field-required">Categoria</label>
+                     <select name="select" placeholder="teste" class="post-create-container__input--distance " formControlName="category_id" required>
+                            <option hidden value="" disabled selected>Selecione uma Categoria</option>
+                            <option [ngValue]="category.id" *ngFor="let category of categories">{{category.name}}</option>
                     </select>
+                    <div invalidmessage="category_id" class="post-create-container__labels--distance">
+                            <p *invalidType="'required'" class="container-message-errors__type-message"></p>
+                    </div>
                 </div>
-                <div style="display: flex;
-                flex-direction: column;width: 33%;">
-                        <label class="post-create-container__labels--distance">Subcategoria</label>
+                <div class="container-informations__qualifications__blocks">
+                        <label class="post-create-container__labels--distance field-required">SubCategoria</label>
                         <select name="select" class="post-create-container__input--distance" formControlName="subcategory_id" required>
+                            <option hidden value="" disabled selected>Selecione uma SubCategoria</option>
                             <option [ngValue]="subCategory.id" *ngFor="let subCategory of subCategories">{{subCategory.name}}</option>
                         </select>
+                        <div invalidmessage="subcategory_id"class="post-create-container__labels--distance">
+                                <p *invalidType="'required'" class="container-message-errors__type-message"></p>
+                        </div>
                    </div>
-                   <div style="display: flex;
-                   flex-direction: column;width: 33%;margin-right: 0;">
-                        <label class="post-create-container__labels--distance">Autor</label>
+                   <div class="container-informations__qualifications__blocks no-margin-right">
+                        <label class="post-create-container__labels--distance label-style field-required">Autor</label>
                         <select name="select" class="post-create-container__input--distance" formControlName="author_id" required>
+                            <option hidden value="" disabled selected>Selecione um Author</option>
                             <option [ngValue]="author.id" *ngFor="let author of authors">{{author.name}}</option>
                         </select>
+                        <div invalidmessage="author_id"class="post-create-container__labels--distance">
+                                <p *invalidType="'required'" class="container-message-errors__type-message"></p>
+                        </div>
                    </div>
              </div>
     </div>
     <div>
-        <label class="post-create-container__labels--distance">Conteúdo</label>
+        <label class="post-create-container__labels--distance label-style field-required">Conteúdo</label>
         <editor formControlName="html" apiKey="8d7pge1r07j2aybnfkhpl31dfsak4vit55vre1517hdtiu2m" [init]="{plugins: 'image paste',paste_data_images:'true', height : '480px'}" class="post-create-container__input--distance"></editor>
+        <div invalidmessage="html"class="post-create-container__labels--distance">
+                <p *invalidType="'required'" class="container-message-errors__type-message"></p>
+        </div>
         <div class="post-create-container__container-buttons">
-            <button type="submit" class="post-create-container__send" [disabled]="">Salvar</button>{{createPostForm.invalid}}
+            <button type="submit" class="" mat-raised-button color="primary">Salvar</button>
         </div>
     </div>    
     </form>

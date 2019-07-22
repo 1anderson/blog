@@ -22,10 +22,7 @@ export class CrudService {
   post(data, opts?) {
       const options = {} as any;
       console.log("DATA",data);
-      return this.http.post("http://localhost:3000/post",data,options).subscribe(
-        (res) => console.log(res),
-        (err) => console.log(err)
-      );;
+      return this.http.post("http://localhost:3000/post",data,options);
   }
   }
 
