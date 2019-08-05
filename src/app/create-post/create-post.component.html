@@ -19,8 +19,8 @@
                      <label for="categoria" class="post-create-container__labels--distance label-style field-required">Categoria</label>
                      <select name="select" placeholder="teste" class="post-create-container__input--distance " formControlName="category_id" required>
                             <option hidden value="" disabled selected>Selecione uma Categoria</option>
-                            <option [ngValue]="category.id" *ngFor="let category of categories">{{category.name}}</option>
-                    </select>
+                            <option [ngValue]="category.id" *ngFor="let category of categories$ | async">{{category.name}}</option>
+                     </select>
                     <div invalidmessage="category_id" class="post-create-container__labels--distance">
                             <p *invalidType="'required'" class="container-message-errors__type-message"></p>
                     </div>
@@ -29,7 +29,7 @@
                         <label class="post-create-container__labels--distance field-required">SubCategoria</label>
                         <select name="select" class="post-create-container__input--distance" formControlName="subcategory_id" required>
                             <option hidden value="" disabled selected>Selecione uma SubCategoria</option>
-                            <option [ngValue]="subCategory.id" *ngFor="let subCategory of subCategories">{{subCategory.name}}</option>
+                            <option [ngValue]="subCategory.id" *ngFor="let subCategory of subCategories$ | async">{{subCategory.name}}</option>
                         </select>
                         <div invalidmessage="subcategory_id"class="post-create-container__labels--distance">
                                 <p *invalidType="'required'" class="container-message-errors__type-message"></p>
@@ -39,7 +39,7 @@
                         <label class="post-create-container__labels--distance label-style field-required">Autor</label>
                         <select name="select" class="post-create-container__input--distance" formControlName="author_id" required>
                             <option hidden value="" disabled selected>Selecione um Author</option>
-                            <option [ngValue]="author.id" *ngFor="let author of authors">{{author.name}}</option>
+                            <option [ngValue]="author.id" *ngFor="let author of authors$ | async">{{author.name}}</option>
                         </select>
                         <div invalidmessage="author_id"class="post-create-container__labels--distance">
                                 <p *invalidType="'required'" class="container-message-errors__type-message"></p>
@@ -49,8 +49,8 @@
     </div>
     <div>
         <label class="post-create-container__labels--distance label-style field-required">Conteúdo</label>
-        <editor formControlName="html" apiKey="8d7pge1r07j2aybnfkhpl31dfsak4vit55vre1517hdtiu2m" [init]="{plugins: 'image paste',paste_data_images:'true', height : '480px'}" class="post-create-container__input--distance"></editor>
-        <div invalidmessage="html"class="post-create-container__labels--distance">
+        <editor formControlName="files" apiKey="8d7pge1r07j2aybnfkhpl31dfsak4vit55vre1517hdtiu2m" [init]="{plugins: 'image paste',paste_data_images:'true', height : '480px'}" class="post-create-container__input--distance"></editor>
+        <div invalidmessage="files"class="post-create-container__labels--distance">
                 <p *invalidType="'required'" class="container-message-errors__type-message"></p>
         </div>
         <div class="post-create-container__container-buttons">
