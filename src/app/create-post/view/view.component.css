@@ -1,0 +1,13 @@
+:host {
+    height: 100%;
+}
+
+.container-article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.container-article > article, header {
+    width: 40%;
+}
+

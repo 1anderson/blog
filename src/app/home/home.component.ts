@@ -8,13 +8,12 @@ import { ConfigService } from '../shared/config/config.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  private postList;
-  
+  private postList$;
+
   constructor( private crudService: CrudService, private configService: ConfigService ) {}
- 
+
   ngOnInit() {
-    this.crudService.get(this.configService.getEndPoints().POST, '').subscribe((data) => this.postList = data ,
-    (err)=> console.log(err) );
-   }
+    this.postList$ = this.crudService.get<Post>(this.configService.getEndPoints().POST, '');
+  }
 
 }

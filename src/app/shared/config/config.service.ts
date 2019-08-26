@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class ConfigService {
   private config;
+  private themes;
   constructor() {
       this.config = {
         BASEURL: "http://localhost:3000",
@@ -13,7 +14,19 @@ export class ConfigService {
           USER: 'user',
           AUTHOR: 'author'
         }
-   }
+      }
+      this.themes = {
+        DARKTHEME: {
+          'border-effects-color':'skyblue',
+          'background-color':'black',
+          'font-color':'white'
+        },
+        LIGHTHEME: {
+          'border-effects-color':'skyblue',
+          'background-color':'white',
+          'font-color':'black'
+        }
+      }
   }
   getConfig() {
      return this.config;
@@ -25,6 +38,10 @@ export class ConfigService {
 
   getEndPoints() {
     return this.config.ENDPOINT;
+  }
+
+  getThemes() {
+    return this.themes;
   }
 
 }

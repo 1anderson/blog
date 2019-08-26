@@ -1,9 +1,11 @@
-<article class="item z-depth-3">
+<article class="item">
     <section fxLayout="column" fxLayoutAlign="space-between start">
-        <h2>{{item.title}}</h2>
-        <p class="item__date">{{item.date}} <a class="item__author--color-light-blue" href="/autor">{{item.author}}</a></p>
+        <h1>{{item.title}}</h1>
         <p class="item__description">{{item.description}}</p>
-        <div class="item__button" fxLayout="row" fxLayoutAlign="end center">
+        <div class="item__button" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="10px">
+            <p class="item__date">{{item.created_date}} <a class="item__author--color-light-blue" href="/autor">{{item.author.name}}</a></p>
+            <button mat-raised-button color="primary" [routerLink]="['/view', item.id]">ler</button>
         </div>
     </section>
 </article>
+<hr class="line-effect">
