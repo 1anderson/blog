@@ -1,2 +1,11 @@
 $games-color-main: #007bff;
+$background-color: white;
+$hover-color: skyblue;
 $input-invalid-color : red;
+$border-effects-color:  var( --border-effects-color);
+
+:root{
+    --border-effects-color: rgb(233, 249, 255);
+    --background-color:black;
+    --font-color: white;
+}

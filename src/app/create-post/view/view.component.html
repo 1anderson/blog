@@ -1,0 +1,11 @@
+
+
+
+<div class="container-article" *ngIf="this.post$ | async as post">
+        <header>
+                <h1>{{post.title}}</h1>
+                <p>{{post.description}}</p>
+        </header>
+        <article [innerHTML]="post.file | sanitizeHtml"></article>
+</div>
+

@@ -1,17 +1,12 @@
-$games-color-main: #428bca;
 .item{
     width: 93%;
     height: 100%;
     padding: 15px;
-    margin: 0 0px 30px 0;
 }
 
 h2{
     margin: 0;
 }
-
-
-
 
 .item__date{
     margin-top: 10px;
@@ -31,8 +26,8 @@ h2{
    
 }
 
-.button--color{
-    background-color: $games-color-main;
+.button--color {
+    background-color: var(--border-effects-color);
 }
 
 .z-depth-5 {
@@ -45,5 +40,6 @@ h2{
 
   .item__description{
       text-align: justify;
+      font-size: 1.09em;
+      font-family: Areial;
   }
-

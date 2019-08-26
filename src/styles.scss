@@ -1,8 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 @import 'theme.scss';
 
+
+
 body {
     margin: 0;
+    background-color: var(--background-color);
+    color: var(--font-color);
 }
 
 .container{
@@ -13,16 +17,6 @@ body {
 .z-depth-3 {
     box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0), 0 0px 0px 0 rgba(0, 0, 0, 0), 0 0px 1px 0px rgba(0, 0, 0, 0.230);
 }
-
-// input.ng-invalid.ng-dirty:not(:focus), textarea.ng-invalid.ng-dirty:not(:focus) {
-//   box-shadow: 0 0 1px $input-invalid-color;
-//   border: 1px solid $input-invalid-color;
-// }
-
-// input.ng-invalid.ng-dirty:not(:focus), textarea.ng-invalid.ng-dirty:not(:focus), select.ng-invalid.ng-touched:not(:focus) {
-//     box-shadow: 0 0 1px $input-invalid-color;
-//     border: 1px solid $input-invalid-color;
-// }
 
 .text-message-error {
     color: red;
@@ -38,10 +32,6 @@ select {
    text-transform: uppercase;
  }
 
-// select.ng-invalid.ng-touched {
-//     color:red
-// }
-
 textarea {
      height: 60px;
 }
@@ -49,10 +39,6 @@ textarea {
 textarea::placeholder {
     line-height: 45px;
 }
-
-// textarea.ng-invalid.ng-touched.ng-dirty:not(:focus)::placeholder {
-//     color: red;
-// }
 
 input::placeholder, textarea::placeholder {
     font-family: Roboto-Thin;
@@ -103,3 +89,13 @@ select {
     color: black;
 }
 
+.line-effect {
+    border-width: 0 0 1px;
+    color: var( --border-effects-color);
+    border-image: linear-gradient(
+    90deg,
+    rgba($border-effects-color, 0),
+    rgba($border-effects-color, 1) 50%,
+    rgba($border-effects-color, 0) 100%) 0 0 100%;
+    border-style: solid;
+}

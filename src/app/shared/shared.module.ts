@@ -5,17 +5,18 @@ import { HttpClientModule } from '@angular/common/http';
 import { ConfigService } from './config/config.service';
 import { InvalidMessageDirective } from './directives/invalid-message.directive';
 import { InvalidTypeDirective } from './directives/invalid-type.directive';
+import { SanitizeHtmlPipe } from './pipes/sanitize-html.pipe';
 
 @NgModule({
   imports: [
     CommonModule,
     HttpClientModule
   ],
-  declarations: [InvalidMessageDirective, InvalidTypeDirective],
+  declarations: [InvalidMessageDirective, InvalidTypeDirective, SanitizeHtmlPipe],
   providers:[
     CrudService,
     ConfigService
   ],
-  exports: [InvalidMessageDirective, InvalidTypeDirective]
+  exports: [InvalidMessageDirective, InvalidTypeDirective, SanitizeHtmlPipe]
 })
 export class SharedModule { }

@@ -18,7 +18,8 @@ import { FooterComponent } from './footer/footer.component';
 
 import { SharedModule } from './shared/shared.module';
 import { AppRoutingModule } from './/app-routing.module';
-import { CreatePostComponent } from './create-post/create-post.component'
+import { CreatePostComponent } from './create-post/create-post.component';
+import { ViewComponent } from './create-post/view/view.component'
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { CreatePostComponent } from './create-post/create-post.component'
     NavMenuComponent,
     ListItemComponent,
     FooterComponent,
-    CreatePostComponent
+    CreatePostComponent,
+    ViewComponent
   ],
   imports: [
     BrowserModule,
