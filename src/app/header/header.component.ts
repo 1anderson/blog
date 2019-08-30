@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { Observable } from 'rxjs';
 
 import { ThemeService } from '../shared/services/theme.service';
+import { CrudService } from '../shared/crud.service';
+import { ConfigService } from '../shared/config/config.service';
+import { Theme } from '../shared/entities/theme';
 
 @Component({
   selector: 'app-header',
@@ -10,12 +14,10 @@ import { ThemeService } from '../shared/services/theme.service';
 })
 
 export class HeaderComponent implements OnInit {
-  private navItens = [ { name: 'Desenvolvimento',subcategory: [ { name: 'Subcategory-1', link: '/games' }, { name: 'Subcategory-2', link: '/games' } ] },
-                       { name: 'Games', subcategory: [ { name: 'Subcategory-1', link: '/games' }, { name: 'Subcategory-2', link: '/games' } ] },
-                      //  { name: 'Psicologia', subcategory: [ { name: 'Subcategory-1', link: '/games'}, {name: 'Subcategory-2', link: '/games' } ] }
-                     ];
+  private navItens$: Observable<Theme[]>;
   private lightheme = new FormControl(false);
-  constructor(private themeService: ThemeService) { }
+  private nav2 = [];
+  constructor(private themeService: ThemeService, private crudService: CrudService, private configService: ConfigService ) { }
 
   ngOnInit() {
     this.lightheme.valueChanges
@@ -27,6 +29,7 @@ export class HeaderComponent implements OnInit {
           this.themeService.toogleDark();
         }
       });
+      this.navItens$ = this.crudService.get<Theme>(`${this.configService.getEndPoints().THEME}`,'');
   }
 
 }

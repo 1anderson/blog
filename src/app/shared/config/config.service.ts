@@ -12,7 +12,8 @@ export class ConfigService {
           CATEGORY:'category',
           SUBCATEGORY: 'subcategory',
           USER: 'user',
-          AUTHOR: 'author'
+          AUTHOR: 'author',
+          THEME: 'theme'
         }
       }
       this.themes = {

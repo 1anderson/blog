@@ -12,7 +12,7 @@ export class NavMenuComponent implements OnInit {
   
   
   ngOnInit() {
-    console.log(this.navItens[0]);
+    console.log(this.navItens);
   }
 
 }

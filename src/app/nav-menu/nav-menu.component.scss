@@ -44,7 +44,7 @@ button:hover{
     position: absolute;
     background-color: var(--background-color);
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    //box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
 }
 
@@ -83,4 +83,29 @@ button:hover{
     border-bottom: 9px solid var(--background-color);
     position: absolute;
     top: -9px;
+}
+
+ul {
+margin: 0;
+padding: 0;
+list-style: none;
+width: 150px;
+}
+
+li ul {
+    position: absolute;
+    left: 149px;
+    top: 0;
+}
+
+ul li {
+    position: relative;
+}
+
+.subcategories {
+    display: none;
+}
+
+.dropdown-content:hover .subcategories {
+    display: block
 }

@@ -19,7 +19,8 @@ import { FooterComponent } from './footer/footer.component';
 import { SharedModule } from './shared/shared.module';
 import { AppRoutingModule } from './/app-routing.module';
 import { CreatePostComponent } from './create-post/create-post.component';
-import { ViewComponent } from './create-post/view/view.component'
+import { ViewComponent } from './create-post/view/view.component';
+import { CategorizationViewComponent } from './categorization/categorization-view/categorization-view.component'
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { ViewComponent } from './create-post/view/view.component'
     ListItemComponent,
     FooterComponent,
     CreatePostComponent,
-    ViewComponent
+    ViewComponent,
+    CategorizationViewComponent
   ],
   imports: [
     BrowserModule,

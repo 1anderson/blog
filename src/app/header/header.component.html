@@ -1,5 +1,5 @@
 <nav class="header" fxLayout="row"  fxLayoutAlign="space-between  center" >
-    <div class="header__menu"  fxLayout="row">
+    <div class="header__menu"  fxLayout="row"  *ngIf="this.navItens$ | async as navItens">
         <app-nav-menu [navItens]="navItens"></app-nav-menu>
     </div>
 <div>

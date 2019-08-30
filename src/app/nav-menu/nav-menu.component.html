@@ -2,9 +2,15 @@
     <div class="dropdown" *ngFor="let navItem of navItens">
         <button class="dropbtn">{{navItem.name}}
         </button>
-        <div class="dropdown-content">
-          <div class="arrow"></div>
-            <a *ngFor="let navSubItem of navItem.subcategory" class="menu__item" [href]="navSubItem.link">{{navSubItem.name}}</a>
-        </div>
-      </div> 
+        <ul class="dropdown-content">
+            <li *ngFor="let category of navItem.categories" style="list-style: none;">
+                <a class="menu__item" style="position: relative">{{category.name}}</a>
+                <ul class="subcategories">
+                    <li *ngFor="let subCategory of category.subCategories">
+                        <a class="menu__item" style="position: relative">{{subCategory.name}}</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+      </div>
 </nav>
