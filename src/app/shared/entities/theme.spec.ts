@@ -2,6 +2,6 @@ import { Theme } from './theme';
 
 describe('Theme', () => {
   it('should create an instance', () => {
-    expect(new Theme()).toBeTruthy();
+    expect(new Theme(1,'')).toBeTruthy();
   });
 });

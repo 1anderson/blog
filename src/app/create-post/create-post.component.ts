@@ -37,7 +37,7 @@ export class CreatePostComponent implements OnInit {
     if (this.createPostForm.valid) {
       this.formData = this.populateFormData(this.formData,this.createPostForm);
       if ( this.isCreation() ) {
-        this.crudService.post<Post>(this.formData).subscribe(data => {console.log(data), this.post = data['data'] },err => console.log(err));
+        this.crudService.post<Post>(this.configService.getEndPoints().POST,this.formData).subscribe(data => {console.log(data), this.post = data['data'] },err => console.log(err));
       }
       else {
         this.formData.set('id',this.post.id.toString());

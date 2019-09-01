@@ -6,8 +6,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatInputModule } from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from "@angular/flex-layout";
-import { ReactiveFormsModule } from '@angular/forms';
 import { EditorModule } from '@tinymce/tinymce-angular';
+
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -45,9 +45,10 @@ import { CategorizationViewComponent } from './categorization/categorization-vie
     FlexLayoutModule,
     SharedModule,
     AppRoutingModule,
-    ReactiveFormsModule,
     EditorModule
+
   ],
+  exports: [],
   providers: [],
   bootstrap: [AppComponent]
 })

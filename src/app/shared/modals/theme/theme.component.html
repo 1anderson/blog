@@ -1,1 +1,19 @@
-<p>theme works!</p>
+<form [formGroup]="form">
+    <h1 mat-dialog-title>Cadastrar Thema</h1>
+    <div mat-dialog-content>
+      <p>Nome</p>
+      <mat-form-field>
+        <input matInput formControlName="name" required minlength="1">
+        <div invalidmessage="name" class="container-message-errors">
+          <p *invalidType="'required'" class="container-message-errors__type-message"></p>
+          <p *invalidType="'maxlength'" class="container-message-errors__type-message"></p>
+        </div>
+      </mat-form-field>
+    </div>
+    <div mat-dialog-actions>
+      <button mat-button (click)="closeDialog()">No Thanks</button>
+      <button mat-button (click)="save()" cdkFocusInitial>Ok</button>
+    </div>
+</form>
+
+

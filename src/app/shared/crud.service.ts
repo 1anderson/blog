@@ -16,7 +16,7 @@ export class CrudService {
     this.ulrBase = this.configService.getUrlBase();
   }
 
-  get<T>( entity, url, queryParams = {} )  {
+  get<T>( entity, queryParams = {} )  {
     let params = new HttpParams();
       for (let [key,value] of Object.entries(queryParams)) {
         params = params.set(key, queryParams[key]);
@@ -24,9 +24,9 @@ export class CrudService {
     return this.http.get<T[]>(`${this.ulrBase}/${entity}`,{ params });
   }
 
-  post<T>(data, opts?) {
+  post<T>(entity, data, opts?) {
       const options = {} as any;
-      return this.http.post<T>("http://localhost:3000/post",data,options);
+      return this.http.post<T>(`http://localhost:3000/${entity}`,data,options);
   }
 
   put(data, opts?) {
